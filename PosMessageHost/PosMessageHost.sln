@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PosMessageHost", "PosMessageHost\PosMessageHost.csproj", "{75BBB181-E5BC-42A3-A4F4-08DD1F0EA98F}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "chrome-extension", "..\chrome-extension\", "{3129AE13-9514-4B45-8D14-04EA1530B04F}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_10445"
+		Debug.AspNetCompiler.PhysicalPath = "..\chrome-extension\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_10445\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_10445"
+		Release.AspNetCompiler.PhysicalPath = "..\chrome-extension\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_10445\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "10445"
+		SlnRelativePath = "..\chrome-extension\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75BBB181-E5BC-42A3-A4F4-08DD1F0EA98F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75BBB181-E5BC-42A3-A4F4-08DD1F0EA98F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75BBB181-E5BC-42A3-A4F4-08DD1F0EA98F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75BBB181-E5BC-42A3-A4F4-08DD1F0EA98F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3129AE13-9514-4B45-8D14-04EA1530B04F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3129AE13-9514-4B45-8D14-04EA1530B04F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3129AE13-9514-4B45-8D14-04EA1530B04F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{3129AE13-9514-4B45-8D14-04EA1530B04F}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

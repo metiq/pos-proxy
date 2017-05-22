@@ -1,0 +1,25 @@
+{
+  "name": "POS Proxy",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Send messages to POS terminals via native message host",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["eventPage.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "nativeMessaging"
+  ],
+  "externally_connectable": {
+    // Match patterns for web pages. Does not affect content scripts.
+    // If this field is not specified, no webpages can connect.
+    "matches": [
+      // TODO Add real domain names
+      "*://localhost/*"
+    ]
+  }
+}

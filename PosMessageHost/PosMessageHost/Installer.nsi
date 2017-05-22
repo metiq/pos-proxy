@@ -41,7 +41,7 @@ functionEnd
 section "install"
 	# Files for the install directory - to build the installer, these should be in the same directory as the install script (this file)
 	setOutPath $INSTDIR
-	File ClinicHQ.PosIntegration.exe
+	File PosMessageHost.exe
 	File *.dll
 	File *.json
 	File logo.ico
@@ -83,7 +83,7 @@ functionEnd
 section "uninstall"
  
 	# Remove files
-	delete $INSTDIR\ClinicHQ.PosIntegration.exe
+	delete $INSTDIR\PosMessageHost.exe
 	delete $INSTDIR\*.dll
 	delete $INSTDIR\*.json
 	delete $INSTDIR\logo.ico
@@ -96,5 +96,5 @@ section "uninstall"
  
 	# Remove information from the registry
 	DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${COMPANYNAME} ${APPNAME}"
-	DeleteRegKey HKCU "Software\Google\Chrome\NativeMessagingHosts\com.clinichq.posterminal"
+	DeleteRegKey HKCU "Software\Google\Chrome\NativeMessagingHosts\io.metiq.pos-proxy"
 sectionEnd

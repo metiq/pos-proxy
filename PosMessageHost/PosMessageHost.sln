@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PosMessageHost", "PosMessageHost\PosMessageHost.csproj", "{75BBB181-E5BC-42A3-A4F4-08DD1F0EA98F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PosMessageHost", "PosMessageHost\PosMessageHost.csproj", "{75BBB181-E5BC-42A3-A4F4-08DD1F0EA98F}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "chrome-extension", "..\chrome-extension\", "{3129AE13-9514-4B45-8D14-04EA1530B04F}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -24,6 +24,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "chrome-extension", "..\chro
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "10445"
 		SlnRelativePath = "..\chrome-extension\"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{849030B1-2301-4A3D-8EF6-01BE40776C4B}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Global

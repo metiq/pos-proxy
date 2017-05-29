@@ -1,5 +1,5 @@
 {
-  "name": "io.metiq.pos-proxy",
+  "name": "io.metiq.posproxy",
   "description": "POS Proxy - Native Message Host",
   "path": "PosMessageHost.exe",
   "type": "stdio",

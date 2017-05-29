@@ -50,7 +50,7 @@ section "install"
 	writeUninstaller "$INSTDIR\uninstall.exe"
 
 	# Register the app as Google Chrome native messaging host
-	WriteRegStr HKCU "Software\Google\Chrome\NativeMessagingHosts\io.metiq.pos-proxy" "" "$\"$INSTDIR\manifest.json$\""
+	WriteRegStr HKCU "Software\Google\Chrome\NativeMessagingHosts\io.metiq.posproxy" "" "$\"$INSTDIR\manifest.json$\""
 	
 	# Registry information for add/remove programs
 	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}" "DisplayName" "${APPNAME}"
@@ -95,6 +95,6 @@ section "uninstall"
 	rmDir $INSTDIR
  
 	# Remove information from the registry
-	DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${COMPANYNAME} ${APPNAME}"
-	DeleteRegKey HKCU "Software\Google\Chrome\NativeMessagingHosts\io.metiq.pos-proxy"
+	DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}"
+	DeleteRegKey HKCU "Software\Google\Chrome\NativeMessagingHosts\io.metiq.posproxy"
 sectionEnd

@@ -15,8 +15,6 @@
     "nativeMessaging"
   ],
   "externally_connectable": {
-    // Match patterns for web pages. Does not affect content scripts.
-    // If this field is not specified, no webpages can connect.
     "matches": [
       // TODO Add real domain names
       "*://localhost/*"

@@ -1,4 +1,4 @@
-var hostName = 'io.metiq.pos-proxy';
+var hostName = 'io.metiq.posproxy';
 
 chrome.runtime.onConnectExternal.addListener(function (port) {
   port.onMessage.addListener(function (message, port) {

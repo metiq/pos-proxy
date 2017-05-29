@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="./popup.js"></script>
 </head>
-<body>
+<body style="width: 400px;">
     <p>This extension enables sending messages to your POS terminal.</p>
+    <p>POS Configuration:</p>
+    <ul>
+        <li>IP Address: <strong id="posIpAddress"></strong></li>
+        <li>Port: <strong id="posPort"></strong></li>
+    </ul>
+    <button id="btnOpenOptions">Edit Configuration</button>
+    <script src="./popup.js"></script>
 </body>
 </html>

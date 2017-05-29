@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>POS Proxy Configuration</title>
+</head>
+
+<body style="padding: 0 10px 10px">
+    <p>
+        Please note that after saving the data the page that uses this extension needs to be reloaded.
+    </p>
+    <p>
+        <label>IP Address:</label><br />
+        <input id="posIpAddress" type="text" placeholder="Please add the terminal's IP address (example: 192.168.1.10)" style="width:100%" />
+    </p>
+
+    <p>
+        <label>Port:</label><br />
+        <input id="posPort" type="number" placeholder="Please add the terminal's port (example: 8765)" style="width:100%" />
+    </p>
+    <div>
+        <div id="status"></div>
+        <button id="save">Save</button>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>

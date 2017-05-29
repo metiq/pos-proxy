@@ -10,35 +10,43 @@ namespace PosMessageHost
 {
     class Program
     {
-        // TODO: Add these in configuration during install or let the chrome extension send them
-        const int _port = 8765;
-        const string _server = "192.168.100.10";
-
         // Reading and writing to the Console IO taken from:
         // https://stackoverflow.com/questions/30880709/c-sharp-native-host-with-chrome-native-messaging
         static void Main(string[] args)
         {
             JObject data = Read();
 
-            var processed = ProcessMessage(data);
-            Write(processed);
+            ProcessMessage(data);
         }
 
-        public static string ProcessMessage(JObject clientData)
+        public static void ProcessMessage(JObject clientData)
         {
-            var message = clientData.ToString(Formatting.None);
+            string server = clientData["address"].Value<string>();
+            int port = clientData["port"].Value<int>();
+            string message = clientData["message"].ToString(Formatting.None);
 
             byte[] data = Encoding.ASCII.GetBytes(message);
 
-            var sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            sock.Connect(IPAddress.Parse(_server), _port);
+            using (var sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
+            {
+                try
+                {
+                    sock.Connect(IPAddress.Parse(server), port);
 
-            int r = sock.Send(data);
+                    int r = sock.Send(data);
 
-            var receivedData = new byte[256];
+                    var receivedData = new byte[256];
 
-            int bytes = sock.Receive(receivedData);
-            return Encoding.ASCII.GetString(receivedData, 0, bytes);
+                    int bytes = sock.Receive(receivedData);
+                    string response = Encoding.ASCII.GetString(receivedData, 0, bytes);
+
+                    Write(response);
+                }
+                catch (Exception ex)
+                {
+                    Write(null, ex.Message);
+                }
+            }
         }
 
         public static JObject Read()
@@ -62,11 +70,12 @@ namespace PosMessageHost
             return JsonConvert.DeserializeObject<JObject>(new string(buffer));
         }
 
-        public static void Write(JToken data)
+        public static void Write(JToken data, JToken error = null)
         {
             var json = new JObject
             {
-                ["data"] = data
+                ["data"] = data,
+                ["error"] = error
             };
 
             var bytes = Encoding.UTF8.GetBytes(json.ToString(Formatting.None));

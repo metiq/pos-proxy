@@ -1,9 +1,10 @@
 ﻿!define APPNAME "POS Proxy"
 !define COMPANYNAME "metiq.io"
+!define HOSTNAME "io.metiq.posproxy"
 # These three must be integers
 !define VERSIONMAJOR 0
 !define VERSIONMINOR 0
-!define VERSIONBUILD 1
+!define VERSIONBUILD 16
 
 # This is the size (in kB) of all the files copied into "Program Files"
 !define INSTALLSIZE 48840
@@ -50,7 +51,7 @@ section "install"
 	writeUninstaller "$INSTDIR\uninstall.exe"
 
 	# Register the app as Google Chrome native messaging host
-	WriteRegStr HKCU "Software\Google\Chrome\NativeMessagingHosts\io.metiq.posproxy" "" "$\"$INSTDIR\manifest.json$\""
+	WriteRegStr HKCU "Software\Google\Chrome\NativeMessagingHosts\${HOSTNAME}" "" "$INSTDIR\manifest.json"
 	
 	# Registry information for add/remove programs
 	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}" "DisplayName" "${APPNAME}"
@@ -96,5 +97,5 @@ section "uninstall"
  
 	# Remove information from the registry
 	DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}"
-	DeleteRegKey HKCU "Software\Google\Chrome\NativeMessagingHosts\io.metiq.posproxy"
+	DeleteRegKey HKCU "Software\Google\Chrome\NativeMessagingHosts\${HOSTNAME}"
 sectionEnd
